@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @expansion.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @expansion.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @expansion.image_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_expansion_path(@expansion) %> |
+<%= link_to 'Back', expansions_path %>

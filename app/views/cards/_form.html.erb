@@ -1,0 +1,61 @@
+<%= form_for(@card) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :special_powers %><br />
+    <%= f.text_field :special_powers %>
+  </div>
+  <div class="field">
+    <%= f.label :abilities %><br />
+    <%= f.text_field :abilities %>
+  </div>
+  <div class="field">
+    <%= f.label :strength %><br />
+    <%= f.text_field :strength %>
+  </div>
+  <div class="field">
+    <%= f.label :resistence %><br />
+    <%= f.text_field :resistence %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :rarity %><br />
+    <%= f.text_field :rarity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+<%= render(:partial => "select_card_types") %>
+  </div>
+  <div class="field">
+    <%= f.label :expansion_id %><br />
+<%= render(:partial => "select_expansions") %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

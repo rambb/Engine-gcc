@@ -1,0 +1,8 @@
+<%=
+    collection_select('card',
+                      'type_id',
+                      @all_card_types,
+                      :id,
+                      :name
+                     )
+%>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @card.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @card.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @card.image_url %>
+</p>
+
+<p>
+  <b>Special powers:</b>
+  <%= @card.special_powers %>
+</p>
+
+<p>
+  <b>Abilities:</b>
+  <%= @card.abilities %>
+</p>
+
+<p>
+  <b>Strength:</b>
+  <%= @card.strength %>
+</p>
+
+<p>
+  <b>Resistence:</b>
+  <%= @card.resistence %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @card.cost %>
+</p>
+
+<p>
+  <b>Rarity:</b>
+  <%= @card.rarity_id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @card.type_id %>
+</p>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

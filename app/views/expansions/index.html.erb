@@ -1,0 +1,27 @@
+<h1>Listing expansions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @expansions.each do |expansion| %>
+  <tr>
+    <td><%= expansion.name %></td>
+    <td><%= expansion.description %></td>
+    <td><%= expansion.image_url %></td>
+    <td><%= link_to 'Show', expansion %></td>
+    <td><%= link_to 'Edit', edit_expansion_path(expansion) %></td>
+    <td><%= link_to 'Destroy', expansion, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Expansion', new_expansion_path %>

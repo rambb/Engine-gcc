@@ -1,0 +1,27 @@
+<h1>Listing deck_items</h1>
+
+<table>
+  <tr>
+    <th>Card</th>
+    <th>Deck</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deck_items.each do |deck_item| %>
+  <tr>
+    <td><%= deck_item.card_id %></td>
+    <td><%= deck_item.deck_id %></td>
+    <td><%= deck_item.quantity %></td>
+    <td><%= link_to 'Show', deck_item %></td>
+    <td><%= link_to 'Edit', edit_deck_item_path(deck_item) %></td>
+    <td><%= link_to 'Destroy', deck_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deck item', new_deck_item_path %>

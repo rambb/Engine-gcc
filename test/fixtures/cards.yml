@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  image_url: MyString
+  special_powers: MyString
+  ability: 
+  strength: MyString
+  resistence: MyString
+  cost: MyString
+  rarity: 1
+
+two:
+  name: MyString
+  description: MyText
+  image_url: MyString
+  special_powers: MyString
+  ability: 
+  strength: MyString
+  resistence: MyString
+  cost: MyString
+  rarity: 1

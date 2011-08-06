@@ -1,0 +1,8 @@
+<%=
+    collection_select('card',
+                      'expansion_id',
+                      @all_expansions,
+                      :id,
+                      :name
+                     )
+%>
