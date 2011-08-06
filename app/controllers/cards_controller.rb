@@ -27,11 +27,22 @@ class CardsController < ApplicationController
       for ability_id in abilities
 #        @ability = Ability.find(ability_id)
         ability = Ability.find(ability_id)
-        #RAILS_DEFAULT_LOGGER.debug @ability.target    
 
-    #        ability = [
-                
-        #@abilities_array.push(Ability.find(ability_id))
+
+        effects_id = ability.type_id.split(",")
+        effect_summary = []
+        for effect_id in effects_id
+            effect = Effect.find(effect_id)
+            effect_summary.push([effect.description],[effect.routines])
+        end
+
+        ability_summary= { :cost => ability.cost,
+                          :target => ability.target,
+                          :quantity => ability.quantity,
+                          :effects => effect_summary }      
+#                          'title' => ability.title
+                        
+        @abilities_array.push(ability_summary)
 #     effects = @ability.type_id.split(",") #old
 #        for effect_id in @abilities_array
 
@@ -47,7 +58,7 @@ class CardsController < ApplicationController
     end
 
 #RAILS_DEFAULT_LOGGER.debug "ciao"
-#RAILS_DEFAULT_LOGGER.debug @abilities    
+RAILS_DEFAULT_LOGGER.debug @abilities_array.inspect   
 
     respond_to do |format|
       format.html # show.html.erb
