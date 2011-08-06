@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cost:</b>
+  <%= @ability.cost %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @ability.type_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @ability.quantity %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%= @ability.target %>
+</p>
+
+
+<%= link_to 'Edit', edit_ability_path(@ability) %> |
+<%= link_to 'Back', abilities_path %>

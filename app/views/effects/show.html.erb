@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @effect.description %>
+</p>
+
+<p>
+  <b>Routines:</b>
+  <%= @effect.routines %>
+</p>
+
+
+<%= link_to 'Edit', edit_effect_path(@effect) %> |
+<%= link_to 'Back', effects_path %>

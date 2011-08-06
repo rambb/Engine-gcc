@@ -1,4 +1,10 @@
 Tcg::Application.routes.draw do
+  resources :abilities
+
+  resources :effects
+
+  resources :users
+
   resources :card_types
 
   resources :deck_items

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  hashed_password: MyString
+  salt: MyString
+  image_url: MyString
+  signature: MyText
+  currency: 1
+  boosters: MyText
+
+two:
+  name: MyString
+  hashed_password: MyString
+  salt: MyString
+  image_url: MyString
+  signature: MyText
+  currency: 1
+  boosters: MyText

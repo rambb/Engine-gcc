@@ -1,0 +1,33 @@
+<%= form_for(@ability) do |f| %>
+  <% if @ability.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@ability.errors.count, "error") %> prohibited this ability from being saved:</h2>
+
+      <ul>
+      <% @ability.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br />
+    <%= f.text_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :target %><br />
+    <%= f.text_field :target %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

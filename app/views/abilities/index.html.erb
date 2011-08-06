@@ -1,0 +1,29 @@
+<h1>Listing abilities</h1>
+
+<table>
+  <tr>
+    <th>Cost</th>
+    <th>Type</th>
+    <th>Quantity</th>
+    <th>Target</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @abilities.each do |ability| %>
+  <tr>
+    <td><%= ability.cost %></td>
+    <td><%= ability.type_id %></td>
+    <td><%= ability.quantity %></td>
+    <td><%= ability.target %></td>
+    <td><%= link_to 'Show', ability %></td>
+    <td><%= link_to 'Edit', edit_ability_path(ability) %></td>
+    <td><%= link_to 'Destroy', ability, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ability', new_ability_path %>

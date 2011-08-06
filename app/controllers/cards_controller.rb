@@ -15,6 +15,40 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
 
+    abilities = @card.abilities.split(",") #old
+   
+    @abilities_array = [] #array finale
+
+#    @abilities.each do |a|
+
+      #ability = Ability.find(a)
+     # @abilities_array.push(ability)
+     
+      for ability_id in abilities
+#        @ability = Ability.find(ability_id)
+        ability = Ability.find(ability_id)
+        #RAILS_DEFAULT_LOGGER.debug @ability.target    
+
+    #        ability = [
+                
+        #@abilities_array.push(Ability.find(ability_id))
+#     effects = @ability.type_id.split(",") #old
+#        for effect_id in @abilities_array
+
+    
+#      @abilities_array.push()
+
+      #@ability2 = Effect.find (@ability.type_id
+        
+      #@effects.each do |e|
+      #    #@ability_array.push(e) 
+      #    @effect_array = e
+      #end
+    end
+
+#RAILS_DEFAULT_LOGGER.debug "ciao"
+#RAILS_DEFAULT_LOGGER.debug @abilities    
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @card }
@@ -37,6 +71,8 @@ class CardsController < ApplicationController
   # GET /cards/1/edit
   def edit
     @card = Card.find(params[:id])
+    @all_expansions = Expansion.find(:all, :order=>"name")
+    @all_card_types = CardType.find(:all, :order=>"id")
   end
 
   # POST /cards

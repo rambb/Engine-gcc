@@ -1,0 +1,25 @@
+<%= form_for(@effect) do |f| %>
+  <% if @effect.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@effect.errors.count, "error") %> prohibited this effect from being saved:</h2>
+
+      <ul>
+      <% @effect.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :routines %><br />
+    <%= f.text_area :routines %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

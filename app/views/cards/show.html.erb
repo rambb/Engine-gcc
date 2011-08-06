@@ -22,7 +22,15 @@
 
 <p>
   <b>Abilities:</b>
-  <%= @card.abilities %>
+
+<% @abilities_array.each do |c| %>
+<li><%= c %></li>
+<% end %>
+
+
+
+
+
 </p>
 
 <p>

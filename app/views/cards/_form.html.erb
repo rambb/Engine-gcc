@@ -44,8 +44,9 @@
     <%= f.text_field :cost %>
   </div>
   <div class="field">
-    <%= f.label :rarity %><br />
-    <%= f.text_field :rarity_id %>
+    <%= f.label :rarity_id %><br />
+  <%= select_tag('card[rarity_id]', options_for_select([['Common', 1], ['Medium', 2], ['Rare', 3], ['Ultra Rare', 4] ]) ) %>
+   
   </div>
   <div class="field">
     <%= f.label :type %><br />

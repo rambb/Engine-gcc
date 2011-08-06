@@ -1,0 +1,16 @@
+class CreateAbilities < ActiveRecord::Migration
+  def self.up
+    create_table :abilities do |t|
+      t.string :cost
+      t.string :type_id
+      t.string :quantity
+      t.string :target
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :abilities
+  end
+end
