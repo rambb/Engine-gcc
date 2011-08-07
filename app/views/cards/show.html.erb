@@ -24,7 +24,17 @@
   <b>Abilities:</b>
 
 <% @abilities_array.each do |c| %>
-<li><%= c[:target] %></li>
+<li>
+<strong>Nome abilità</strong>: <%= c[:title] %><br/>
+Costo: <%= c[:cost] %><br/>
+Quantità: <%= c[:quantity] %><br/>
+Target: <%= c[:target] %><br/>
+Effetti:<br/>
+<% c[:effects].each do |e| %>
+----desc:<%= e[:description] %><br/>
+----routine:<%= e[:routines] %><br/>
+<% end %>
+</li>
 <% end %>
 
 

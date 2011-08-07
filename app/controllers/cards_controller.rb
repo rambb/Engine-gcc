@@ -33,14 +33,14 @@ class CardsController < ApplicationController
         effect_summary = []
         for effect_id in effects_id
             effect = Effect.find(effect_id)
-            effect_summary.push([effect.description],[effect.routines])
+            effect_summary.push({ :description => effect.description, :routines => effect.routines})
         end
 
         ability_summary= { :cost => ability.cost,
                           :target => ability.target,
                           :quantity => ability.quantity,
-                          :effects => effect_summary }      
-#                          'title' => ability.title
+                          :effects => effect_summary,      
+                          :title => ability.title }
                         
         @abilities_array.push(ability_summary)
 #     effects = @ability.type_id.split(",") #old
