@@ -1,0 +1,11 @@
+class AddEffectToAbilities < ActiveRecord::Migration
+  def self.up
+    add_column :abilities, :effect, :text
+    add_column :abilities, :effect_code, :text
+  end
+
+  def self.down
+    remove_column :abilities, :effect_code
+    remove_column :abilities, :effect
+  end
+end

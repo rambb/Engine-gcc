@@ -1,0 +1,27 @@
+<h1>Listing collection_cards</h1>
+
+<table>
+  <tr>
+    <th>Card</th>
+    <th>User</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @collection_cards.each do |collection_card| %>
+  <tr>
+    <td><%= collection_card.card_id %></td>
+    <td><%= collection_card.user_id %></td>
+    <td><%= collection_card.quantity %></td>
+    <td><%= link_to 'Show', collection_card %></td>
+    <td><%= link_to 'Edit', edit_collection_card_path(collection_card) %></td>
+    <td><%= link_to 'Destroy', collection_card, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Collection card', new_collection_card_path %>

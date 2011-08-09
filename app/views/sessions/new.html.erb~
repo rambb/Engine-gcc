@@ -1,0 +1,25 @@
+<div class="depot_form" >
+<% if flash[:alert] %>
+	<p id="notice" ><%= flash[:alert] %></p>
+<% end %>
+<%= form_tag do %>
+ a differenza dal form_for questo è statico, non legge campi esterni
+	<fieldset>
+	<legend>Please Log In</legend>
+	<div>
+	<label for="name" >Name:</label>
+	<%= text_field_tag :name, params[:name] %>
+	</div>
+	Report erratum
+	this copy Download from Wow! eBook <www.wowebook.com> is (P1.0 printing, March 2011)
+	ITERATION I2: AUTHENTICATING USERS 204
+	<div>
+	<label for="password" >Password:</label>
+	<%= password_field_tag :password, params[:password] %>
+	</div>
+	<div>
+	<%= submit_tag "Login" %>
+	</div>
+	</fieldset>
+<% end %>
+</div>

@@ -1,0 +1,70 @@
+<% content_for :title, "Gioco imbafantastico |" %>
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'home' %>
+<% end %>
+<div class="container" style="background:#000;">
+	<div class="header" style="width:100%;background:#ffffee;height:160px;">
+		<div style="position:relative;left:990px;width:350px;height:20px;background:lime;">
+			Home > Product > iPlotz
+		</div>
+		<div style="position:relative;left:790px;top:10px;background:lime;width:400px;border:black 1px solid;padding:10px;">
+			<font style="color:black;"><strong>Loggato</strong><br/><strong>Crediti:</strong>....</font>
+		</div>
+		<div class="logo" style="background:#ffffcc;width:250px;position:relative;top:-80px;" >
+			<%= image_tag('loghetto.jpg', :width => "250", :height => "150") %>
+		</div>
+		
+	</div>
+</div>
+
+<div class="container">
+  <div class="sidebar1" style="margin-top:200px;">
+  <p>Gioca è gratis</p>
+  <p><a href="#">Registrati subito</a></p>
+<div id="loginform">
+	<form  action="https://www.google.com/accounts/ServiceLoginAuth" method="post">
+		<label>Nome utente</label><br/>
+		<input type="textbox" name="username" id="username" size="18" >
+		<br/><label>Password</label><br/>
+		<input type="password" name="Passwd" id="Passwd" size="18" >
+		<br/>
+		<input type="submit" class="gaia le button" name="signIn" id="signIn" value="Accedi">
+	</form>
+</div>
+
+<p><a href="#">Effettua il login</a></p>
+<div id="loginform">
+	<form  action="https://www.google.com/accounts/ServiceLoginAuth" method="post">
+		<label>Nome utente</label><br/>
+		<input type="textbox" name="username" id="username" size="18" >
+		<br/><label>Password</label><br/>
+		<input type="password" name="Passwd" id="Passwd" size="18" >
+		<br/>
+		<input type="submit" class="gaia le button" name="signIn" id="signIn" value="Accedi">
+	</form>
+</div>
+	
+    <p> I collegamenti qui sopra mostrano una struttura di navigazione di base mediante un elenco non ordinato con stili CSS. Utilizzate questa struttura come punto di partenza e modificate le propriet&agrave; per produrre un look personalizzato. Se vi servono dei menu flyout, createli utilizzando un menu Spry, un menu widget di Adobe Exchange o una variet&agrave; di altre soluzioni javascript o CSS.</p>
+    <p>Se volete posizionare l'area di navigazione in alto, dovete semplicemente spostare il ul.nav nella parte superiore della pagina e ricreare gli stili.</p>
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+  <center>			<%= image_tag('header.png') %></center>
+    <h1>Istruzioni</h1>
+    <p>Tenete presente che il codice CSS di questi layout contiene molti commenti. Se solitamente lavorate nella vista Progettazione, visualizzate almeno momentaneamente la vista Codice per consultare i suggerimenti sull'uso del codice CSS nei layout liquidi. Potete rimuovere questi commenti prima di lanciare il sito. Per saperne di pi&egrave; sulle tecniche utilizzate in questi layout CSS, leggete questo articolo sul Centro per gli sviluppatori Adobe - <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
+    <h2>Clearing</h2>
+    <p>Poich&egrave; tutte le colonne sono con float, questo layout utilizza overflow:hidden sul .container. Questa tecnica di clearing obbliga il .container a capire dove terminano le colonne per fare apparire i bordi o i colori di bordo che applicate al .container. Se avete un elemento di grandi dimensioni che fuoriesce dal .container, esso apparir&egrave; troncato. Inoltre non potrete utilizzare margini negativi o posizionamenti assoluti con valori negativi per portare gli elementi all'esterno del .container, altrimenti non saranno aggiornati al di fuori del .container.</p>
+    <p>Se avete bisogno di utilizzare queste propriet&egrave;, dovete utilizzare un metodo di clearing differente. Quello pi&egrave; affidabile prevede l'aggiunta di un &lt;br class=&quot;clearfloat&quot; /&gt; o &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; dopo l'ultima colonna con float (ma prima della chiusura del .container). L'effetto di clearing sar&egrave; lo stesso.</p>
+    <h3>Pi&egrave; di pagina</h3>
+    <p>L'aggiunta di un pi&egrave; di pagina dopo le colonne ma all'interno del .container far&agrave; fallire il metodo di clearing overflow:hidden. Potete inserire un .footer in un secondo .container esternamente al primo senza produrre effetti indesiderati. La scelta pi&ugrave; semplice &egrave; probabilmente quella di iniziare con un layout contenente intestazioni e pi&egrave; di pagina e poi rimuovere l'intestazione per utilizzare i metodi di clearing in quel tipo di layout.</p>
+    <h4>Commenti condizionali di Internet Explorer</h4>
+    <p>Questi layout liquidi contengono un commento condizionale di Internet Explorer (IECC) che consente di correggere due problemi. </p>
+    <ol>
+      <li>I browser eseguono tutti allo stesso modo l'arrotondamento delle dimensioni dei div nei layout basati su percentuale. Quando il browser esegue il rendering di un valore come 144,5 px o 564,5 px, deve arrotondarlo al numero intero pi&ugrave; vicino. Safari e Opera arrotondano per difetto, Internet Explorer per eccesso e Firefox arrotonda una colonna per eccesso e una per difetto riempiendo completamente il container. Queste diverse modalit&egrave; di arrotondamento possono determinare delle differenze in alcuni layout. Questo IECC specifica un margine negativo di 1 px per correggere il problema in IE. Potete spostarlo in qualunque colonna (a sinistra o a destra) a seconda delle vostre necessit&egrave; di layout.</li>
+      <li>La propriet&egrave; zoom &egrave; stata aggiunta all'ancoraggio all'interno dell'elenco di navigazione poich&egrave;, in alcuni casi, viene eseguito il rendering dello spazio vuoto supplementare in IE6 e IE7. Zoom fornisce a IE la sua propriet&agrave; hasLayout per correggere questo problema.</li>
+    </ol>
+    <!-- end .content --></div>
+  <div class="sidebar2">
+    <h4>Classifica</h4>
+    <p>Normalmente, il colore di sfondo di un div viene visualizzato solo per tutta la lunghezza del contenuto. Se desiderate visualizzare una linea di divisione anzich&egrave; un colore, inserite un bordo sul lato del div .content (ma solo se esso conterr&agrave; sempre una quantit&agrave; maggiore di contenuto).</p>
+    <!-- end .sidebar2 --></div>
+  <!-- end .container --></div>

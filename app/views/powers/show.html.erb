@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @power.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @power.code %>
+</p>
+
+
+<%= link_to 'Edit', edit_power_path(@power) %> |
+<%= link_to 'Back', powers_path %>

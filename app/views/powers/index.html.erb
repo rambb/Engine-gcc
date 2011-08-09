@@ -1,0 +1,25 @@
+<h1>Listing powers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @powers.each do |power| %>
+  <tr>
+    <td><%= power.name %></td>
+    <td><%= power.code %></td>
+    <td><%= link_to 'Show', power %></td>
+    <td><%= link_to 'Edit', edit_power_path(power) %></td>
+    <td><%= link_to 'Destroy', power, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Power', new_power_path %>
