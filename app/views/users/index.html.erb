@@ -6,7 +6,7 @@
 <table>
   <tr>
     <th>Name</th>
-
+    <th>Email</th>
     <th>Image url</th>
     <th>Signature</th>
     <th>Currency</th>
@@ -19,6 +19,7 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.name %></td>
+    <td><%= user.email %></td>
     <td><%= user.image_url %></td>
     <td><%= user.signature %></td>
     <td><%= user.currency %></td>

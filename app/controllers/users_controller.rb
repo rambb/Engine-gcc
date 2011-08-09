@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize #whitelist
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
+    if authorize_with_result
+     
+    
+    
+      @users = User.all
+  
+      respond_to do |format|
+        format.html # index.html.erb
+        format.xml  { render :xml => @users }
+      end
     end
   end
 

@@ -17,7 +17,12 @@
 
 <p>
   <b>Special powers:</b>
-  <%= @card.special_powers %>
+<% @powers_array.each do |p| %>
+<li>
+<%= p %></li>
+<% end %>
+
+
 </p>
 
 <p>
@@ -27,13 +32,9 @@
 <li>
 <strong>Nome abilità</strong>: <%= c[:title] %><br/>
 Costo: <%= c[:cost] %><br/>
-Quantità: <%= c[:quantity] %><br/>
-Target: <%= c[:target] %><br/>
-Effetti:<br/>
-<% c[:effects].each do |e| %>
-----desc:<%= e[:description] %><br/>
-----routine:<%= e[:routines] %><br/>
-<% end %>
+Effetto: <%= c[:effect] %><br/>
+Effect Code: <%= c[:effect_code] %><br/>
+
 </li>
 <% end %>
 

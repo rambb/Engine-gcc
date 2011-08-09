@@ -1,15 +1,10 @@
-#---
-# Excerpted from "Agile Web Development with Rails, 4rd Ed.",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
+
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
   validates :name, :presence => true, :uniqueness => true
+  has_many :collection_cards, :dependent => :destroy
+  validates :email, :presence => true, :email => true
   #  validates :email, :presence => true, :uniqueness => true
 
   validates :password, :confirmation => true
@@ -39,6 +34,17 @@ class User < ActiveRecord::Base
       self.hashed_password = self.class.encrypt_password(password, salt)
     end
   end
+
+  def add_card_to_collection(card_id)
+    card_to_add = collection_cards.find_by_card_id(card_id)
+    if card_to_add
+      card_to_add.quantity += 1
+    else
+      card_to_add = collection_cards.build(:card_id => card_id)
+    end
+    card_to_add
+  end
+
   
   private
 
@@ -49,5 +55,7 @@ class User < ActiveRecord::Base
     def generate_salt
       self.salt = self.object_id.to_s + rand.to_s
     end
+
+  
 end
 

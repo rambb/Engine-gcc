@@ -6,6 +6,10 @@
 </p>
 
 <p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+<p>
   <b>Hashed password:</b>
   <%= @user.hashed_password %>
 </p>
@@ -38,3 +42,10 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<h2>Cards</h2>
+<ul>
+<% @user.collection_cards.each do |item| %>
+<li><%= item.quantity %> &times; <%= item.card.name %></li>
+<% end %>
+</ul>

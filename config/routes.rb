@@ -1,7 +1,34 @@
 Tcg::Application.routes.draw do
-  resources :abilities
 
-  resources :effects
+  #get "admin/index"
+
+  #get "sessions/new"
+
+  #get "sessions/create"
+
+  #get "sessions/destroy"
+
+ # get "home/index"
+
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+#  get "session/new"
+
+#  get "session/create"
+
+#  get "session/destroy"
+
+  resources :collection_cards
+
+  resources :powers
+
+  resources :abilities
 
   resources :users
 
@@ -14,6 +41,10 @@ Tcg::Application.routes.draw do
   resources :expansions
 
   resources :cards
+
+  root :to => "home#index", :as =>'home'
+
+  #  root :to => ''
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

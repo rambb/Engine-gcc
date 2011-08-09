@@ -10,16 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110806204110) do
+ActiveRecord::Schema.define(:version => 20110807130607) do
 
   create_table "abilities", :force => true do |t|
     t.string   "cost"
-    t.string   "type_id"
-    t.string   "quantity"
-    t.string   "target"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "title"
+    t.text     "effect"
+    t.text     "effect_code"
   end
 
   create_table "card_types", :force => true do |t|
@@ -46,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20110806204110) do
     t.integer  "type_id"
   end
 
+  create_table "collection_cards", :force => true do |t|
+    t.integer  "card_id"
+    t.integer  "user_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "deck_items", :force => true do |t|
     t.integer  "card_id"
     t.integer  "deck_id"
@@ -63,17 +70,17 @@ ActiveRecord::Schema.define(:version => 20110806204110) do
     t.datetime "updated_at"
   end
 
-  create_table "effects", :force => true do |t|
-    t.text     "description"
-    t.text     "routines"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "expansions", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "powers", :force => true do |t|
+    t.string   "name"
+    t.text     "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20110806204110) do
     t.text     "boosters"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end

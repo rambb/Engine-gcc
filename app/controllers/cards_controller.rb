@@ -15,50 +15,34 @@ class CardsController < ApplicationController
   def show
     @card = Card.find(params[:id])
 
-    abilities = @card.abilities.split(",") #old
+    abilities_id = @card.abilities.split(",") #old
    
     @abilities_array = [] #array finale
 
-#    @abilities.each do |a|
-
-      #ability = Ability.find(a)
-     # @abilities_array.push(ability)
      
-      for ability_id in abilities
-#        @ability = Ability.find(ability_id)
-        ability = Ability.find(ability_id)
+    for ability_id in abilities_id
+      ability = Ability.find(ability_id)
 
+      ability_summary= { :cost => ability.cost,
+                        :effect => ability.effect,
+                        :effect_code => ability.effect_code,
+                        :title => ability.title }
+                      
+      @abilities_array.push(ability_summary)
 
-        effects_id = ability.type_id.split(",")
-        effect_summary = []
-        for effect_id in effects_id
-            effect = Effect.find(effect_id)
-            effect_summary.push({ :description => effect.description, :routines => effect.routines})
-        end
-
-        ability_summary= { :cost => ability.cost,
-                          :target => ability.target,
-                          :quantity => ability.quantity,
-                          :effects => effect_summary,      
-                          :title => ability.title }
-                        
-        @abilities_array.push(ability_summary)
-#     effects = @ability.type_id.split(",") #old
-#        for effect_id in @abilities_array
-
-    
-#      @abilities_array.push()
-
-      #@ability2 = Effect.find (@ability.type_id
-        
-      #@effects.each do |e|
-      #    #@ability_array.push(e) 
-      #    @effect_array = e
-      #end
     end
 
+    powers_id = @card.special_powers.split(",") #old
+    @powers_array = [] #array finale
+
+    for power_id in powers_id
+      power = Power.find(power_id)
+                         
+      @powers_array.push(power.name)
+    end
 #RAILS_DEFAULT_LOGGER.debug "ciao"
-RAILS_DEFAULT_LOGGER.debug @abilities_array.inspect   
+Rails.logger "ciao2"
+#RAILS_DEFAULT_LOGGER.debug @abilities_array.inspect   
 
     respond_to do |format|
       format.html # show.html.erb

@@ -40,7 +40,11 @@ class DeckItemsController < ApplicationController
   # POST /deck_items
   # POST /deck_items.xml
   def create
-    @deck_item = DeckItem.new(params[:deck_item])
+    
+    @deck = current_deck #Va definito nell'application controller, riga 118
+    card = Card.find(params[:card_id])
+    @deck_item = @deck.add_card_to_deck(card_id)
+ #    @deck_item = DeckItem.new(params[:deck_item]) #originale
 
     respond_to do |format|
       if @deck_item.save

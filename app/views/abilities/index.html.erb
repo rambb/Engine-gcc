@@ -4,9 +4,8 @@
   <tr>
     <th>Title</th>
     <th>Cost</th>
-    <th>Type</th>
-    <th>Quantity</th>
-    <th>Target</th>
+    <th>Effect</th>
+    <th>Codice effect</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,9 +15,8 @@
   <tr>
     <td><%= ability.title %></td>
     <td><%= ability.cost %></td>
-    <td><%= ability.type_id %></td>
-    <td><%= ability.quantity %></td>
-    <td><%= ability.target %></td>
+    <td><%= ability.effect %></td>
+    <td><%= ability.effect_code %></td>
     <td><%= link_to 'Show', ability %></td>
     <td><%= link_to 'Edit', edit_ability_path(ability) %></td>
     <td><%= link_to 'Destroy', ability, :confirm => 'Are you sure?', :method => :delete %></td>
