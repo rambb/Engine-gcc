@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+<head> 
+  <title>Gioco imbafantastico | Tcg</title> 
+  <link href="/stylesheets/home.css?1312815698" media="screen" rel="stylesheet" type="text/css" /> 
+<link href="/stylesheets/scaffold.css?1312581590" media="screen" rel="stylesheet" type="text/css" /> 
+  <script src="/javascripts/prototype.js?1312580846" type="text/javascript"></script> 
+<script src="/javascripts/effects.js?1312580846" type="text/javascript"></script> 
+<script src="/javascripts/dragdrop.js?1312580846" type="text/javascript"></script> 
+<script src="/javascripts/controls.js?1312580846" type="text/javascript"></script> 
+<script src="/javascripts/rails.js?1312580846" type="text/javascript"></script> 
+<script src="/javascripts/application.js?1312580846" type="text/javascript"></script> 
+<link href="/stylesheets/home.css?1312815698" media="screen" rel="stylesheet" type="text/css" /> 
+ 
+<meta name="csrf-param" content="authenticity_token" /> 
+<meta name="csrf-token" content="5GssO5dVNiHgje6XN1M87U80VGAkx+IDN3MUQbEe5Js="/> 
+ 
+</head> 
+<body> 
+<div class="container" style="background:#000;"> 
+	<div class="header" style="width:100%;background:#ffffee;height:160px;"> 
+		<div style="position:relative;left:990px;width:350px;height:20px;background:lime;"> 
+			Home > Product > iPlotz
+		</div> 
+		<div style="position:relative;left:790px;top:10px;background:lime;width:400px;border:black 1px solid;padding:10px;"> 
+			<font style="color:black;"> 
+          <strong>Loggato</strong> 
+          <p>Benvenuto, <strong>ken</strong></p> 
+          <strong>Crediti:</strong>....</font> 
+          <a href="/users">Users</a> 
+          <form method="post" action="/logout"  class="button_to"><div><input name="_method" type="hidden" value="delete" /><input type="submit" value="Logout" /><input name="authenticity_token" type="hidden" value="5GssO5dVNiHgje6XN1M87U80VGAkx+IDN3MUQbEe5Js=" /></div></form> 
+ 
+		</div> 
+		<div class="logo" style="background:#ffffcc;width:250px;position:relative;top:-80px;" > 
+			<img alt="Loghetto" height="150" src="/images/loghetto.jpg?1312815698" width="250" /> 
+		</div> 
+		
+	</div> 
+</div> 
+ 
+ 
+</body> 
+</html> 
+
