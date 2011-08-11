@@ -18,23 +18,23 @@
  
   <div> 
     <%= f.label :name %>:
-    <%= f.text_field :name, :size => 40 %>
+    <%= f.text_field :name, :size => 40, :autocomplete => :off %>
   </div> 
  
  <div> 
     <%= f.label :email %>:
-    <%= f.text_field :email, :size => 40 %>
+    <%= f.text_field :email, :size => 40, :autocomplete => :off %>
   </div> 
  
 
   <div> 
     <%= f.label :password, 'Password' %>:
-    <%= f.password_field :password, :size => 40 %>
+    <%= f.password_field :password, :size => 40, :autocomplete => :off %>
   </div> 
  
   <div> 
     <%= f.label :password_confirmation, 'Confirm' %>:
-    <%= f.password_field :password_confirmation, :size => 40 %>
+    <%= f.password_field :password_confirmation, :size => 40, :autocomplete => :off %>
   </div> 
  
   <div class="field">

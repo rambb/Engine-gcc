@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110807130607) do
+ActiveRecord::Schema.define(:version => 20110810091124) do
 
   create_table "abilities", :force => true do |t|
     t.string   "cost"
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20110807130607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.integer  "ualevel",         :default => 1
   end
 
 end

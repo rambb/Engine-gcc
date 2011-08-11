@@ -5,11 +5,7 @@ class UsersController < ApplicationController
   def index
 
     if authorize_with_result
-     
-    
-    
       @users = User.all
-  
       respond_to do |format|
         format.html # index.html.erb
         format.xml  { render :xml => @users }
